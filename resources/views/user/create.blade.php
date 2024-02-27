@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Booking Form</title>
 </head>
 <body>
@@ -11,6 +12,7 @@
         @csrf
     
         <input type="hidden" name="passenger_id" value="{{ auth()->user()->id }}">
+        
     
         <div class="mb-4">
             <label for="departure_city" class="block text-gray-700 text-sm font-bold mb-2">Departure City:</label>
