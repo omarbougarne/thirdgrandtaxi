@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\AdminAuth\AdminDashboardController;
 use App\Http\Controllers\AdminAuth\AdminUserController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\PassengerController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -53,4 +55,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/user/driver', [DriverController::class, 'create'])->name('driver.create');
     Route::post('/user/driver', [DriverController::class, 'store'])->name('driver.store');
 });
+Route::middleware(['auth'])->group(function () {
+    Route::get('/bookings/create', [BookingController::class, 'create'])->name('bookings.create');
+    Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
+    Route::get('/bookings/index', [BookingController::class, 'index'])->name('bookings.index');
+});
+
+
+
 
