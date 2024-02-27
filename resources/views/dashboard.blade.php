@@ -48,13 +48,6 @@
                     <input type="text" name="start" id="start" placeholder="Start">
                     <input type="text" name="end" id="end" placeholder="End">
                     <br>
-                    <select name="vehicle" id="vechicle">
-                        <option value="choose_vechicle">Choose Vechicle</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                    </select>
                     <br>
                     <input type="submit" value="SUBMIT">
                 </form>

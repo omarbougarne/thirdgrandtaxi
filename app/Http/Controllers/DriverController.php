@@ -32,7 +32,7 @@ class DriverController extends Controller
             'destination_city' => $request->destination_city,
         ]);
 
-        // Redirect to a success page or dashboard
+        
         return redirect()->route('passenger.create')->with('success', 'Passenger registered successfully!');
     }
 }
