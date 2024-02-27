@@ -14,7 +14,7 @@ class CreateRatingsTable extends Migration
         Schema::create('ratings', function (Blueprint $table) {
             $table->increments('id');
             $table->foreignId('booking_id')->constrained('bookings')->onDelete('cascade');
-            $table->longText('comments')->nullable();
+            $table->longText('comment')->nullable();
             $table->integer('star_rating');
             $table->enum('status', ['active', 'deactive']);
             $table->timestamps();

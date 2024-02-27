@@ -53,10 +53,16 @@ public function createrating()
     {
         return view('bookings.rating');
     }
-public function reviewstore(Request $request, $id){
-    $review =  Rating::with('bookng_id')->find($id);
-    $review->comments= $request->comment;
-    $review->star_rating = $request->rating;
+public function reviewstore(Request $request){
+    $user_id = Auth::id();
+    $booking = Booking::where('user_id', $user_id)->first();
+    $booking = $booking->id;
+    
+    $review = Rating::create([
+        'comment' => $request->comment,
+        'star_rating' => $request->rating,
+        'booking_id' => $booking, 
+    ]);
     $review->save();
     return redirect()->back()->with('flash_msg_success','Your review has been submitted Successfully,');
 }

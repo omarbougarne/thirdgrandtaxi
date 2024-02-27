@@ -130,7 +130,9 @@
         <div class="container">
             <div class="row">
                 <div class="col mt-4">
-                    <form class="py-2 px-4" action="{{route('bookings.store')}}" style="box-shadow: 0 0 10px 0 #ddd;" method="POST" autocomplete="off">
+                    <form class="py-2 px-4" action="{{ route('bookings.store', ['id' => 1]) }}" style="box-shadow: 0 0 10px 0 #ddd;" method="POST" autocomplete="off">
+                        <p class="font-weight-bold ">Review</p>
+                                             <div class="form-group row">
                         @csrf
                         <p class="font-weight-bold ">Review</p>
                         <div class="form-group row">
@@ -155,7 +157,7 @@
                         </div>
                         </div>
                         <div class="mt-3 text-right">
-                        <button class="btn btn-sm py-2 px-3 btn-info">Submit
+                        <button type="submit" class="btn btn-sm py-2 px-3 btn-info">Submit
                         </button>
                         </div>
                     </form>

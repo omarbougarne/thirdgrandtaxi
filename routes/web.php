@@ -66,8 +66,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
     Route::get('/bookings/index', [BookingController::class, 'index'])->name('bookings.index');
     Route::post('/bookings/{id}/dash', [BookingController::class, 'assign'])->name('bookings.dash');
-    Route::get('/bookings/rating', [BookingController::class, 'createrating'])->name('review.create');
-    Route::get('/bookings/{id}/rating', [BookingController::class, 'reviewstore'])->name('review.store');
+    Route::get('/bookings/rating', [BookingController::class, 'createrating'])->name('bookings.create');
+    Route::post('/bookings/{id}/rating', [BookingController::class, 'reviewstore'])->name('bookings.store');
 });
 
 
