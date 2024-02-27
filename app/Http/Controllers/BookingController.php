@@ -2,7 +2,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Rating;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
@@ -33,19 +35,32 @@ class BookingController extends Controller
     return back();
 }
 public function assign($id)
-    {
+{
+    $user = auth()->user();
 
-        $user = auth()->user();
-        
-        
-        if ($user->role === 'driver') {
-            $booking = Booking::find($id);
-
-            return view('bookings.dash', compact('booking'));
+    if ($user->role === 'driver') {
+        $booking = Booking::with('user_id')->find($id);
+        if ($booking) {
+            $userName = $booking->user->name;
+            return view('bookings.dash', compact('booking', 'userName'));
         }
 
-        return redirect()->back()->with('error', 'Only drivers can assign bookings.');
+        return redirect()->back()->with('error', 'Booking not found.');
     }
+    return redirect()->back()->with('error', 'Only drivers can assign bookings.');
+}
+public function createrating()
+    {
+        return view('bookings.rating');
+    }
+public function reviewstore(Request $request, $id){
+    $review =  Rating::with('bookng_id')->find($id);
+    $review->comments= $request->comment;
+    $review->star_rating = $request->rating;
+    $review->save();
+    return redirect()->back()->with('flash_msg_success','Your review has been submitted Successfully,');
+}
+
 }
 
 

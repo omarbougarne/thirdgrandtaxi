@@ -12,7 +12,7 @@
         <ul class="max-w-xl mx-auto">
             @foreach ($bookings as $booking)
                 <li class="bg-white rounded-lg shadow-md p-4 mb-4">
-                    <h4>Passenger: {{ $booking->user->name}}</h4>
+                    <h4>Passenger: {{ $booking->user->name ?? 'Unknown' }}</h4>
                     <span class="block mb-2">Departure City: {{ $booking->departure_city }}, Destination City: {{ $booking->destination_city }}</span>
                     @if (auth()->user()->role === 'driver')
                         <form method="POST" action="{{ route('bookings.dash', [$booking->id]) }}" class="inline">

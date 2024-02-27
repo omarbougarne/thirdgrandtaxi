@@ -6,7 +6,10 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\PassengerController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RatingController;
+use App\Models\Booking;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -63,9 +66,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
     Route::get('/bookings/index', [BookingController::class, 'index'])->name('bookings.index');
     Route::post('/bookings/{id}/dash', [BookingController::class, 'assign'])->name('bookings.dash');
-
-
+    Route::get('/bookings/rating', [BookingController::class, 'createrating'])->name('review.create');
+    Route::get('/bookings/{id}/rating', [BookingController::class, 'reviewstore'])->name('review.store');
 });
+
 
 
 
