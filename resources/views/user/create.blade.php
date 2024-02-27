@@ -8,6 +8,8 @@
     <title>Booking Form</title>
 </head>
 <body>
+    <h1 class="text-4xl font-bold text-center mt-8">Book your travel</h1>
+
     <form method="POST" action="{{ route('bookings.store') }}" class="max-w-md mx-auto">
         @csrf
     
