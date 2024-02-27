@@ -18,4 +18,10 @@ class AdminUserController extends Controller
 
         return redirect()->back()->with('success', 'User soft deleted successfully.');
     }
+    public function restore($id){
+
+        $data=User::withTrashed()->find($id);
+        $data->restore();
+        return redirect()->back();
+    }
 }

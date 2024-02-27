@@ -32,6 +32,21 @@ class BookingController extends Controller
     
     return back();
 }
+public function assign($id)
+    {
 
+        $user = auth()->user();
+        
+        
+        if ($user->role === 'driver') {
+            $booking = Booking::find($id);
 
+            return view('bookings.dash', compact('booking'));
+        }
+
+        return redirect()->back()->with('error', 'Only drivers can assign bookings.');
+    }
 }
+
+
+

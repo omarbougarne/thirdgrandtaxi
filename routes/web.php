@@ -45,6 +45,9 @@ require __DIR__.'/auth.php';
 Route::middleware(['auth:admin', 'verified'])->group(function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
     Route::delete('/admin/users/{user}', [AdminUserController::class, 'softDelete'])->name('admin.users.softDelete');
+    Route::get('/admin/users/{user}', [AdminUserController::class, 'restore'])->name('admin.users.restore');
+
+
 });
 require __DIR__.'/adminauth.php';
 
@@ -59,6 +62,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/bookings/create', [BookingController::class, 'create'])->name('bookings.create');
     Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
     Route::get('/bookings/index', [BookingController::class, 'index'])->name('bookings.index');
+    Route::post('/bookings/{id}/dash', [BookingController::class, 'assign'])->name('bookings.dash');
+
+
 });
 
 
