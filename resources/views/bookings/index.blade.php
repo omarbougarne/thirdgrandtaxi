@@ -2,11 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bookings</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>CabHUB</title>
+    <link rel="stylesheet" href="style2.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap" rel="stylesheet"> 
 </head>
+<body class="font-sans">
+    <header id="page_header" class="flex items-center justify-between py-4 px-6 bg-blue-500 text-white">
+        <nav id="nav_bar">
+            <ul id="nav_list" class="flex">
+                <li class="nav_link"><a href="#" class="px-4 py-2">HOME</a></li>
+                <li class="nav_link"><a href="#" class="px-4 py-2">BOOK</a></li>
+            </ul>
+        </nav>
+    </header>
+<body>
 <body class="bg-gray-100">
     <div class="container mx-auto py-8">
         <ul class="max-w-xl mx-auto">

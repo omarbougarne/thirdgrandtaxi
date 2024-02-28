@@ -2,106 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <title>Document</title>
+    <title>CabHUB</title>
+    <link rel="stylesheet" href="style2.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap" rel="stylesheet"> 
 </head>
+<body class="font-sans">
+    <header id="page_header" class="flex items-center justify-between py-4 px-6 bg-yellow-500 text-white">
+        <nav id="nav_bar">
+            <ul id="nav_list" class="flex">
+                <li class="nav_link"><a href="#" class="px-4 py-2">HOME</a></li>
+                <li class="nav_link"><a href="#" class="px-4 py-2">BOOK</a></li>
+            </ul>
+        </nav>
+    </header>
 <body>
     
-{{-- <style>
-     .rate {
-         float: left;
-         height: 46px;
-         padding: 0 10px;
-         }
-         .rate:not(:checked) > input {
-         position:absolute;
-         display: none;
-         }
-         .rate:not(:checked) > label {
-         float:right;
-         width:1em;
-         overflow:hidden;
-         white-space:nowrap;
-         cursor:pointer;
-         font-size:30px;
-         color:#ccc;
-         }
-         .rated:not(:checked) > label {
-         float:right;
-         width:1em;
-         overflow:hidden;
-         white-space:nowrap;
-         cursor:pointer;
-         font-size:30px;
-         color:#ccc;
-         }
-         .rate:not(:checked) > label:before {
-         content: '★ ';
-         }
-         .rate > input:checked ~ label {
-         color: #ffc700;
-         }
-         .rate:not(:checked) > label:hover,
-         .rate:not(:checked) > label:hover ~ label {
-         color: #deb217;
-         }
-         .rate > input:checked + label:hover,
-         .rate > input:checked + label:hover ~ label,
-         .rate > input:checked ~ label:hover,
-         .rate > input:checked ~ label:hover ~ label,
-         .rate > label:hover ~ input:checked ~ label {
-         color: #c59b08;
-         }
-         .star-rating-complete{
-            color: #c59b08;
-         }
-         .rating-container .form-control:hover, .rating-container .form-control:focus{
-         background: #fff;
-         border: 1px solid #ced4da;
-         }
-         .rating-container textarea:focus, .rating-container input:focus {
-         color: #000;
-         }
-         .rated {
-         float: left;
-         height: 46px;
-         padding: 0 10px;
-         }
-         .rated:not(:checked) > input {
-         position:absolute;
-         display: none;
-         }
-         .rated:not(:checked) > label {
-         float:right;
-         width:1em;
-         overflow:hidden;
-         white-space:nowrap;
-         cursor:pointer;
-         font-size:30px;
-         color:#ffc700;
-         }
-         .rated:not(:checked) > label:before {
-         content: '★ ';
-         }
-         .rated > input:checked ~ label {
-         color: #ffc700;
-         }
-         .rated:not(:checked) > label:hover,
-         .rated:not(:checked) > label:hover ~ label {
-         color: #deb217;
-         }
-         .rated > input:checked + label:hover,
-         .rated > input:checked + label:hover ~ label,
-         .rated > input:checked ~ label:hover,
-         .rated > input:checked ~ label:hover ~ label,
-         .rated > label:hover ~ input:checked ~ label {
-         color: #c59b08;
-         }
-</style>   --}}
+<style>
+    
+</style>  
         @if(!empty($value->star_rating))
         <div class="container">
             <div class="row">
